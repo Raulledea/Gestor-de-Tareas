@@ -26,7 +26,7 @@ def index(request):
         })
         
         
-def view_task(request, pk):
+def task_view(request, pk):
     task = Task.objects.get(pk=pk)
-    return render(request, 'task/view_task.html',{'task':task})
+    return render(request, 'task/task_view.html',{'task':task})
 
