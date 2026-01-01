@@ -13,6 +13,7 @@
                     {% endif %}
                     <div class="mt-2">
                         <a href="{% url 'task_view' task.pk %}" class="btn btn-sm btn-outline-secondary">Ver</a>
+                        <a href="{% url 'status_toggle_view' task.pk %}" class="btn btn-sm btn-outline-success me-1">Desmarcar como hecha</a>
                         <a href="{% url 'delete_task_view' task.pk %}" class="btn btn-sm btn-outline-danger">Eliminar</a>
                     </div>
                 </li>

@@ -35,5 +35,11 @@ def delete_task_view(request, pk):
     task.delete()
     return redirect('index')
 
+def status_toggle_view(request, pk):
+    task = Task.objects.get(pk=pk)
+    task.realized = not task.realized
+    task.save()
+    return redirect('index')
+
 
 
