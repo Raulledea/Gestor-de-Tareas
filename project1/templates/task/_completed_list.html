@@ -6,7 +6,7 @@
                 <li class="list-group-item">
                     <div class="d-flex w-100 justify-content-between">
                         <h6 class="mb-1 task-completed">{{ task.title }}</h6>
-                        <small class="text-muted">{{ task.updated_at|date:"d M Y H:i" }}</small>
+                        <small class="text-muted">Fecha de finalización: {{ task.completed_at|date:"d M Y H:i" }}</small>
                     </div>
                     {% if task.description %}
                         <p class="mb-1 text-truncate">{{ task.description }}</p>
