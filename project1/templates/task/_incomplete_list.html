@@ -7,7 +7,7 @@
                     <div class="d-flex w-100 justify-content-between">
                         <h6 class="mb-1">{{ task.title }}</h6>
                         {% if task.due_date %}
-                            <small class="text-muted">{{ task.due_date|date:"d M Y H:i" }}</small>
+                            <small class="text-muted">Fecha límite: {{ task.due_date|date:"d M Y H:i" }}</small>
                         {% endif %}
                     </div>
                     {% if task.description %}
