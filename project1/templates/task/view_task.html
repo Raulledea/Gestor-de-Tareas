@@ -14,8 +14,7 @@
                 <li>Estado: {{ task.realized|yesno:"Completada,Pendiente" }}</li>
                 {% if task.due_date %}<li>Fecha límite: {{ task.due_date|date:"d M Y H:i" }}</li>{% endif %}
                 <li>Creada: {{ task.created_at|date:"d M Y H:i" }}</li>
-                <li>Última actualización: {{ task.updated_at|date:"d M Y H:i" }}</li>
-            </ul>
+                {% if task.completed_at %}<li>Fecha de finalización: {{ task.completed_at|date:"d M Y H:i" }}</li>{% endif %}
 
             <a href="{% url 'index' %}" class="btn btn-sm btn-outline-secondary">Volver</a>
         </div>
