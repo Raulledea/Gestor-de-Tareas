@@ -1,0 +1,27 @@
+<div class="card">
+    <div class="card-header bg-warning text-dark">Pendientes</div>
+    <ul class="list-group list-group-flush">
+        {% if incomplete_tasks %}
+            {% for task in incomplete_tasks %}
+                <li class="list-group-item">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">{{ task.title }}</h6>
+                        {% if task.due_date %}
+                            <small class="text-muted">{{ task.due_date|date:"d M Y H:i" }}</small>
+                        {% endif %}
+                    </div>
+                    {% if task.description %}
+                        <p class="mb-1 text-truncate">{{ task.description }}</p>
+                    {% endif %}
+                    <div class="mt-2">
+                        <a href="{% url 'view_task' task.pk %}" class="btn btn-sm btn-outline-primary me-1">Ver</a>
+                        <a href="#" class="btn btn-sm btn-outline-success me-1">Marcar como hecha</a>
+                        <a href="#" class="btn btn-sm btn-outline-danger">Eliminar</a>
+                    </div>
+                </li>
+            {% endfor %}
+        {% else %}
+            <li class="list-group-item text-muted">No hay tareas pendientes.</li>
+        {% endif %}
+    </ul>
+</div>

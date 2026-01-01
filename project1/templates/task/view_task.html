@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ task.title }} — Tarea{% endblock %}
+
+{% block content %}
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">{{ task.title }}</h3>
+            {% if task.description %}
+                <p class="card-text">{{ task.description }}</p>
+            {% endif %}
+
+            <ul class="list-unstyled small text-muted">
+                <li>Estado: {{ task.realized|yesno:"Completada,Pendiente" }}</li>
+                {% if task.due_date %}<li>Fecha límite: {{ task.due_date|date:"d M Y H:i" }}</li>{% endif %}
+                <li>Creada: {{ task.created_at|date:"d M Y H:i" }}</li>
+                <li>Última actualización: {{ task.updated_at|date:"d M Y H:i" }}</li>
+            </ul>
+
+            <a href="{% url 'index' %}" class="btn btn-sm btn-outline-secondary">Volver</a>
+        </div>
+    </div>
+{% endblock %}

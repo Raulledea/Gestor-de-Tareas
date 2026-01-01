@@ -1,0 +1,22 @@
+<div class="row g-4">
+    <div class="col-lg-5">
+        {% include 'task/_form.html' %}
+    </div>
+
+    <div class="col-lg-7">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="mb-0">Tareas</h4>
+            <small class="text-muted">Pendientes: <strong>{{ incomplete_tasks.count }}</strong> — Completadas: <strong>{{ completed_tasks.count }}</strong></small>
+        </div>
+
+    <div class="row task-lists-row">
+            <div class="col-md-6 mb-3">
+                {% include 'task/_incomplete_list.html' %}
+            </div>
+
+            <div class="col-md-6 mb-3">
+                {% include 'task/_completed_list.html' %}
+            </div>
+        </div>
+    </div>
+</div>
