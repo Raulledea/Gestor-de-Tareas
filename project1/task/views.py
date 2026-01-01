@@ -30,3 +30,10 @@ def task_view(request, pk):
     task = Task.objects.get(pk=pk)
     return render(request, 'task/task_view.html',{'task':task})
 
+def delete_task_view(request, pk):
+    task = Task.objects.get(pk=pk)
+    task.delete()
+    return redirect('index')
+
+
+
